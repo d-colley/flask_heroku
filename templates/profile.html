@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+
+{% block js %}
+{% endblock %}
+
+{% block css %}
+<style type="text/css">
+  body{
+    padding-top: 50px;
+    background-color: #eee !important;
+  }
+  
+  #userInfo
+  {
+      margin-top:20px;
+      -moz-box-shadow: 0 0 2px black;
+    -webkit-box-shadow: 0 0 2px black;
+    box-shadow: 0 0 2px black;
+    padding: 10px;
+    height:230px;
+  }
+  
+  #fullName
+  {
+      -moz-box-shadow: 0 0 2px black;
+    -webkit-box-shadow: 0 0 2px black;
+    box-shadow: 0 0 2px black;
+    padding:10px;
+  }
+  
+  #profPic
+  {
+    position: absolute;
+    padding-top: 50px;
+  }
+  
+</style>
+{% endblock %}
+
+
+{% block main %}
+<div class= "col-md-6 col-md-offset-3" id="profileCard">
+    
+    <div class="col-md-5" id="profPic">
+        <img src="https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg" width=200px height=200px></img>
+    </div>
+    
+    <div class="col-md-5 col-md-offset-6" id="fullName">John Brown</div>
+    
+    <div class= "col-md-5 col-md-offset-6" id= "userInfo">
+        <div id="date">{{time}}</div>
+        <div id="username">Username: morphguy</div>
+        <div id="idNum">ID: 6000032234242 </div>
+        <div id="sex">Sex: Male</div>
+        <div id="age">Age: 50</div>
+        <div id="hiScore">Highest Score: 320</div>
+        <div id="funds">TDollars: 200</div>
+    </div>
+</div>
+
+{% endblock %}

@@ -7,11 +7,22 @@ This file creates your application.
 """
 
 import os
+import time
 from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'this_should_be_configured')
+
+
+def timeinfo():
+    """Returns time"""
+    day= time.strftime("%d")
+    dayEdit = day.lstrip('0')
+    message = "Today is: " + time.strftime("%a")+ ", " + dayEdit + time.strftime( " %B %Y" )
+
+    return message
+
 
 
 ###
@@ -28,6 +39,12 @@ def home():
 def about():
     """Render the website's about page."""
     return render_template('about.html')
+    
+@app.route('/profile/')
+def profile(time=timeinfo()):
+    """Renders a profile page."""
+    return render_template('profile.html', time=time)
+    
 
 
 ###
